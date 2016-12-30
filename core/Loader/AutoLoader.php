@@ -5,7 +5,7 @@
  * Date: 2016/12/27
  * Time: 14:56
  */
-Class AutoLoader
+Class AutoLoader 
 {
     /** @var bool Whether the autoloader has been registered. */
     private static $registered = false;
