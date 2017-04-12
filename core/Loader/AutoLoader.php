@@ -29,11 +29,9 @@ Class AutoLoader
      * @param string $class A class name.
      */
     static public function autoload($class) {
-        if (0 === strpos($class, 'PhpParser\\')) {
-            $fileName = __DIR__ . strtr(substr($class, 9), '\\', '/') . '.php';
-            if (file_exists($fileName)) {
-                require $fileName;
-            }
+        $fileName = __DIR__ . strtr(substr($class, 9), '\\', '/') . '.php';
+        if (file_exists($fileName)) {
+            require $fileName;
         }
     }
 }

@@ -5,11 +5,7 @@
  * Date: 2016/12/26
  * Time: 16:23
  */
-include "config/config.php";
-include "core/Model/Query.php";
-include "core/Model/Model.php";
-include "app/Model/ItemModel.php";
-$item=new ItemModel();
-$itemq=$item->selectAll();
-echo "<pre>";
-var_dump($itemq);
+define('APP_PATH',dirname(__FILE__).'/App');
+define('CORE_PATH',dirname(__FILE__).'/core');
+define('CONFIG_PATH',dirname(__FILE__).'/config');
+require CORE_PATH."/Core.php";

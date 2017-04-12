@@ -19,7 +19,7 @@ Class Model extends Query{
 
     public function __construct()
     {
-        parent::__construct(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+        parent::__construct(App::config('db_host'), App::config('db_user'), App::config('db_password'), App::config('db_database'));
         // 连接数据库
         //$this->connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
