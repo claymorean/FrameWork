@@ -1,2 +1,2 @@
-# SelfM
-A new moudle for myself to improve
+# SuCMS
+A new CMS for myself to improve

@@ -22,9 +22,6 @@ class mainController extends Controller{
 
     public function showAction()
     {
-        $uid=(int)$_GET['uid'];
-        $member=$this->model('member')->find(null,$uid);
-        dd($member);
-
+        
     }
 }
