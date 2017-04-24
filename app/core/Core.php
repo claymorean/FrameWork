@@ -20,7 +20,7 @@ if (!defined('CORE_PATH')) {
 // PHPFW系统目录定义
 define('SYS_PATH', dirname(__FILE__));
 
-require(SYS_PATH . '/App.php');
+require(SYS_PATH . '/app.php');
 
 $GLOBALS['classFiles'] = array(
     'Controller' => SYS_PATH . '/Controller.php',
@@ -53,5 +53,3 @@ spl_autoload_register(function ($className) {
 //    }
 //}
 
-$app = new App();
-$app->run();

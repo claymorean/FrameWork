@@ -1,4 +1,6 @@
 <?php
+namespace App;
+
 class mainController extends Controller{
     protected function _beforAction()
     {

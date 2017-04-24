@@ -4,6 +4,7 @@
  * User: Administrator
  * Date: 2016/12/27
  * Time: 14:56
+ * 废弃 使用composer自动加载
  */
 Class AutoLoader
 {
