@@ -73,11 +73,11 @@ abstract class Controller
         if (isset($this->models[$modelName])) {
             return $this->models[$modelName];
         } else {
-            $modelFile=APP_PATH.'/model/'.$modelName.'.php';
+            $modelFile=APP_PATH.'/Http/Model/'.$modelName.'.php';
             if (!is_file($modelFile)) {
                 die("<h1>Invalid Request</h1>\nModel <strong>$modelName</strong> not found!");
             }
-            require($modelFile);
+            $modelName='App\Http\Model\\'.$modelName;
             $m=new $modelName();
             $this->models[$modelName]=$m;
             return $m;
@@ -88,12 +88,12 @@ abstract class Controller
     {
         if ($this->db===null) {
             $this->db=new DB(
-                App::config('db_host'),
-                App::config('db_user'),
-                App::config('db_password'),
-                App::config('db_database'),
-                App::config('db_charset'),
-                App::config('db_pconnect')
+                env('db_host'),
+                env('db_user'),
+                env('db_password'),
+                env('db_database'),
+                env('db_charset'),
+                env('db_pconnect')
             );
         }
         return $this->db;
@@ -108,9 +108,9 @@ abstract class Controller
     {
         if ($this->cache===null) {
             $options=array(
-                'cacheDir'	=>	strlen(App::config('cache_dir'))?App::config('cache_dir').'/':APP_PATH.'/cache',
-                'lifeTime'	=>	App::config('cache_life_time'),
-                'dirLevels'	=>	App::config('cache_dir_levels'),
+                'cacheDir'	=>	strlen(env('cache_dir'))?env('cache_dir').'/':APP_PATH.'/cache',
+                'lifeTime'	=>	env('cache_life_time'),
+                'dirLevels'	=>	env('cache_dir_levels'),
             );
             $this->cache=new Cache($options);
         }
@@ -126,13 +126,13 @@ abstract class Controller
     {
         if ($this->view===null) {
             $options=array(
-                'templateDir'		=> APP_PATH.'/view',
-                'compileDir'		=> strlen(App::config('cache_dir'))?App::config('cache_dir'):APP_PATH.'/cache',
-                'cacheDir'			=> strlen(App::config('cache_dir'))?App::config('cache_dir'):APP_PATH.'/cache',
-                'cacheDirLevels'	=> App::config('page_cache_dir_levels'),
-                'caching'			=> App::config('page_caching'),
-                'cacheLifeTime'		=> App::config('page_cache_life_time'),
-                'templateFileExt'	=> App::config('template_file_ext'),
+                'templateDir'		=> APP_PATH.'/Http/Views',
+                'compileDir'		=> strlen(env('cache_dir'))?env('cache_dir'):APP_PATH.'/cache',
+                'cacheDir'			=> strlen(env('cache_dir'))?env('cache_dir'):APP_PATH.'/cache',
+                'cacheDirLevels'	=> env('page_cache_dir_levels'),
+                'caching'			=> env('page_caching'),
+                'cacheLifeTime'		=> env('page_cache_life_time'),
+                'templateFileExt'	=> env('template_file_ext'),
             );
             $this->view=new View($options);
         }
