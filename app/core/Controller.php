@@ -84,10 +84,11 @@ abstract class Controller
         }
     }
 
+    //可操作的新建数据库db类
     public function db()
     {
         if ($this->db===null) {
-            $this->db=new DB(
+            $this->db=new App\Core\Model\DB(
                 env('db_host'),
                 env('db_user'),
                 env('db_password'),

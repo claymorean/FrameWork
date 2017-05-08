@@ -2,11 +2,8 @@
 namespace App\Http\Controller;
 
 use App\Core\Controller;
+
 class mainController extends Controller{
-    protected function _beforAction()
-    {
-//		$this->fullPageCache();
-    }
 
     public function indexAction()
     {
