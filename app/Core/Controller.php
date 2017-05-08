@@ -123,23 +123,15 @@ abstract class Controller
      *
      * @return object
      */
-    public function view()
+    public function view($file)
     {
         if ($this->view===null) {
-            $options=array(
-                'templateDir'		=> APP_PATH.'/Http/Views',
-                'compileDir'		=> strlen(env('cache_dir'))?env('cache_dir'):APP_PATH.'/cache',
-                'cacheDir'			=> strlen(env('cache_dir'))?env('cache_dir'):APP_PATH.'/cache',
-                'cacheDirLevels'	=> env('page_cache_dir_levels'),
-                'caching'			=> env('page_caching'),
-                'cacheLifeTime'		=> env('page_cache_life_time'),
-                'templateFileExt'	=> env('template_file_ext'),
-            );
-            $this->view=new View($options);
+            $this->view=new View($file);
         }
         return $this->view;
+        // return $this->view->display($viewfile);
     }
-
+    
     /**
      * 读取、输出页面缓存
      *
@@ -149,17 +141,6 @@ abstract class Controller
     public function fullPageCache($tplFile='',$cacheID='')
     {
         $this->view()->cache($tplFile,$cacheID);
-    }
-
-    /**
-     * 返回编译后的模板文件路径
-     *
-     * @param string$file
-     * @return string
-     */
-    public function display($file='')
-    {
-        return $this->view()->display($file);
     }
 
     /**

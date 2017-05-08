@@ -35,7 +35,7 @@
 </head>
 
 <body>
-<{ $a }>
+<?php echo ?>
     <div class="container">
 
         <form class="form-signin" action="" method="post">

@@ -12,7 +12,10 @@ class mainController extends Controller{
 
         echo '<pre>';
         var_dump($mitem);
-        echo __FILE__.'<br>'.$_SERVER["HTTP_HOST"].'<br>'.$_SERVER["REQUEST_URI"].'<br>'.APP_PATH;
+        echo __FILE__.'<br>'.$_SERVER["HTTP_HOST"].'<br>'.$_SERVER["REQUEST_URI"].'<br>'.APP_PATH.'<br>';
+
+        $this->view('index')->assign('a',APP_PATH);
+        return $this->view('index')->display();
     }
 
     public function showAction()

@@ -10,5 +10,6 @@ function env($var=''){
 }
 
 function dd($var){
-
+    echo '<pre>'.var_dump($var);
+    exit;
 }
