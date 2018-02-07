@@ -1,11 +1,12 @@
 {
-  "name": "SuCMS",
+  "name": "Framework",
   "description": "The Self Use Framework.",
   "keywords": ["framework", "self"],
   "license": "MIT",
   "type": "project",
   "require": {
-    "php": ">=5.4"
+    "php": ">=5.4",
+    "monolog/monolog": "~1.11"
   },
   "autoload": {
     "psr-4": {

@@ -1,5 +1,5 @@
 <?php
-return array(
+return [
     #系统参数
     'default_controller'	=>	'main',				//默认控制器名
     'default_action'		=>	'index',			//默认action名
@@ -26,4 +26,4 @@ return array(
     'db_charset'			=>	'utf8',				//mysql编码
     'db_pconnect'			=>	false,				//是否使用长链接
     'db_table_prefix'		=>	'',					//mysql表前缀
-);
+];
