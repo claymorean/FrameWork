@@ -12,7 +12,8 @@
     "maatwebsite/excel": "~2.1.0",
     "predis/predis": "~1.0",
     "workerman/phpsocket.io": "^1.1",
-    "filp/whoops": "*"
+    "filp/whoops": "*",
+    "vlucas/phpdotenv":"^2.4"
   },
   "autoload": {
     "psr-4": {

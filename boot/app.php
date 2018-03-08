@@ -8,6 +8,7 @@
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Whoops\Run as Whoops;
+use Dotenv\Dotenv;
 // Eloquent ORM
 
 $capsule = new Capsule;
@@ -19,7 +20,10 @@ $whoops = new Whoops;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
-require __DIR__.'/../config/routes.php';
+$env=new Dotenv(BASE_PATH, '.env');
+$env->load();
 
+require PUBLIC_PATH.'/../config/routes.php';
+require APP_PATH.'/Libs/helpers.php';
 //$app = new App\Core\App();
 //$app->run();
