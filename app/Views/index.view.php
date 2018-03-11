@@ -9,17 +9,11 @@
     <meta name="author" content="">
 
     <title>
-            欢迎
+        Welcome
     </title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/admin.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -35,23 +29,9 @@
 </head>
 
 <body>
-<{ $a }>
     <div class="container">
 
-        <form class="form-signin" action="" method="post">
-            <input type="hidden" name="act" value="login" />
-            <h2 class="form-signin-heading" style="text-align: center">筱猫科技后台登录</h2>
-            <label for="inputEmail" class="sr-only">用户名</label>
-            <input type="text" id="inputEmail" name="admin-name" class="form-control" placeholder="用户名" required autofocus>
-            <label for="inputPassword" class="sr-only">密码</label>
-            <input type="password" id="inputPassword" name="admin-pass" class="form-control" placeholder="密码" required>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me">记住我
-                </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-        </form>
+        <h1>Welcome</h1>
 
     </div> <!-- /container -->
 <!-- Bootstrap core JavaScript
@@ -60,9 +40,5 @@
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="js/holder.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="js/admin.js"></script>
 </body>
 </html>
