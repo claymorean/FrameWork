@@ -2,7 +2,7 @@
 /**
  * Action控制器基类 抽象类
  */
-namespace App\Core;
+namespace Core;
 
 abstract class Controller
 {

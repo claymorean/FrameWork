@@ -7,7 +7,7 @@
  * Time: 13:15
  * @property mixed _config
  */
-namespace App\Core;
+namespace Core;
 
 class App
 {

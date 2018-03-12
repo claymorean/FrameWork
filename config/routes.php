@@ -6,23 +6,20 @@
  * @Last  Modified time: 2018-03-08 11:32:33
  */
 
-use NoahBuscher\Macaw\Macaw;
+//use NoahBuscher\Macaw\Macaw;
+use Core\Route;
 
-Macaw::get('', 'HomeController@home');
+Route::get('', 'HomeController@home');
 
-Macaw::get('fuck', function () {
-
+Route::get('fuck', function () {
     echo "成功！";
-
 });
 
-Macaw::get('(:all)', function ($fu) {
+Route::get('(:all)', function ($fu) {
     echo '未匹配到路由<br>'.$fu;
 });
 
-Macaw::$error_callback = function () {
-
+Route::$error_callback = function () {
     throw new Exception("路由无匹配项 404 Not Found");
-
 };
-Macaw::dispatch();
+Route::dispatch();

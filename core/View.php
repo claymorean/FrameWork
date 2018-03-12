@@ -6,7 +6,7 @@
  * Time: 16:57
  */
 
-namespace App\Core;
+namespace Core;
 
 class View
 {

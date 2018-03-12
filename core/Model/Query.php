@@ -5,7 +5,7 @@
  * Date: 2016/12/26
  * Time: 16:08
  */
-namespace App\Core\Model;
+namespace Core\Model;
 Class Query{
     protected $_conn;
     protected $_table="";

@@ -109,4 +109,43 @@ class Curl {
             return $e;
         }
     }
+
+    public function httpGet($url) {
+        //1.初始化
+        $curl = curl_init();
+        //配置curl
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        //执行curl
+        $res = curl_exec($curl);
+        //关闭curl
+        curl_close($curl);
+        return $res;
+    }
+
+    public function httpPost($url, $data = null) {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
+        curl_setopt($curl, CURLOPT_URL, $url);
+        // post数据
+        curl_setopt($curl, CURLOPT_POST, 1);
+        // post的变量
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        // 返回 response_header, 该选项非常重要,如果不为 true, 只会获得响应的正文
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        curl_setopt($curl, CURLOPT_FAILONERROR, false);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        if (1 == strpos("$".$url, "https://")) {
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        }
+        $result = curl_exec($curl);
+        $result = json_decode(trim($result), true);
+        try {
+            curl_close($curl);
+            return $result;
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
 }

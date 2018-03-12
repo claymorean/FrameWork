@@ -1,7 +1,7 @@
 <?php
 //数据库db类
 
-namespace App\Core\Model;
+namespace Core\Model;
 
 class DB{
 

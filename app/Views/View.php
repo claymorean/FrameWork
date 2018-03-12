@@ -1,7 +1,8 @@
 <?php
 namespace App\Views;
+
 class View{
-    const VIEW_PATH=APP_PATH.'Views';
+    const VIEW_PATH=APP_PATH.'/Views';
 
     public $view;
     public $data;
@@ -19,18 +20,18 @@ class View{
             if(is_file($filePath)){
                 return new View($filePath);
             }else{
-                return new Exception('File not exist');
+                throw new \Exception('File not exist');
             }
         }else{
-            return new Exception('Name of view must be exist');
+            throw new \Exception('Name of view must be exist');
         }
     }
 
     public function with($key,$value=null){
         if(is_array($key)){
-            $this->$data=$key;
+            $this->data=$key;
         }else{
-            $this->$data[$key]=$value;
+            $this->data[$key]=$value;
         }
         return $this;
     }
@@ -38,7 +39,7 @@ class View{
     public static function getViewPath($viewName)
     {
         $filePath=str_replace('.','/',$viewName);
-        return self::VIEW_PATh.'/'.$filePath.'.view.php';
+        return self::VIEW_PATH.'/'.$filePath.'.view.php';
     }
 
     public function __call($method, $parameters)

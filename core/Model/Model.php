@@ -5,7 +5,7 @@
  * Date: 2016/12/26
  * Time: 10:48
  */
-namespace App\Core\Model;
+namespace Core\Model;
 
 Class Model extends Query{
     protected $_model;
