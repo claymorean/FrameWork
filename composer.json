@@ -16,7 +16,8 @@
     "predis/predis": "~1.0",
     "workerman/phpsocket.io": "^1.1",
     "filp/whoops": "*",
-    "vlucas/phpdotenv": "^2.4"
+    "vlucas/phpdotenv": "^2.4",
+    "twig/twig":"~1.0"
   },
   "autoload": {
     "psr-4": {

@@ -23,7 +23,7 @@ $whoops->register();
 $env=new Dotenv(BASE_PATH, '.env');
 $env->load();
 
-require BASE_PATH.'/config/test.php';
+require BASE_PATH.'/config/routes.php';
 require APP_PATH.'/Libs/helpers.php';
 //$app = new App\Core\App();
 //$app->run();
