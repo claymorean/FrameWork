@@ -7,5 +7,5 @@ return [
     'cache_dir'				=>	'',					//缓存目录，为空时默认在APP下面的cache
     'compile_include_files'	=>	true,				//编译、缓存引入的文件
     'session_start'			=>	true,				//启动session
-    'default_timezone'		=>	'Asia/Shanghai',	//服务器所在时区
+    'default_timezone'		=>	'PRC',	//服务器所在时区
 ];

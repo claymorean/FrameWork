@@ -23,6 +23,9 @@ $whoops->register();
 $env=new Dotenv(BASE_PATH, '.env');
 $env->load();
 
+$basicConfig = require BASE_PATH.'/config/config.php';
+date_default_timezone_set($basicConfig['default_timezone']);
+
 require BASE_PATH.'/config/routes.php';
 require APP_PATH.'/Libs/helpers.php';
 //$app = new App\Core\App();
