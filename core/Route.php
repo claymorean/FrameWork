@@ -79,6 +79,21 @@ class Route {
 //            $regRule = '^/facility/log(?:/(?P<id>[0-9]+))?$';
         }
         if(empty($matchRouteKeys)){
+            // Run the error callback if the route was not found
+//            if (!self::$error_callback) {
+//                self::$error_callback = function() {
+//                    header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
+//                    echo '404';
+//                };
+//            } else {
+//                if (is_string(self::$error_callback)) {
+//                    self::get($_SERVER['REQUEST_URI'], self::$error_callback);
+//                    self::$error_callback = null;
+//                    self::dispatch();
+//                    return ;
+//                }
+//            }
+//            call_user_func(self::$error_callback);
             throw new \Exception('Route Or Method Error');
         }else{
             foreach ($matchRouteKeys as $matchRouteKey) {
