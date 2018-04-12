@@ -78,6 +78,18 @@ class Redis {
         return self::$redis->del($key);
     }
 
+    public function lock($key,$exp){
+        $bool=self::$redis->setnx($key,time()+$exp);
+        if(time()>self::$redis->get($key)){
+            $bool=self::$redis->set($key,time()+$exp);
+        }
+        return $bool;
+    }
+
+    public function unlock($key){
+        return self::$redis->delete($key);
+    }
+
     private static function _setex($key, $value, $time) {
         self::$redis->setex($key, $time, $value);
     }
